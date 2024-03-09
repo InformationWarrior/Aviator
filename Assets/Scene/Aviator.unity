@@ -1101,7 +1101,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1126,14 +1126,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RiverSweeps.Aviator.AviatorBetPanel, Assembly-CSharp
-        m_MethodName: OnClickBetSelectorsGetBet
-        m_Mode: 5
+      - m_Target: {fileID: 90464671}
+        m_TargetAssemblyTypeName: Aviator.BetPanel, Assembly-CSharp
+        m_MethodName: SelectBet
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 200
           m_FloatArgument: 0
           m_StringArgument: 200
           m_BoolArgument: 0
@@ -1812,9 +1812,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RiverSweeps.Aviator.AviatorBetPanel, Assembly-CSharp
-        m_MethodName: AutoButton
+      - m_Target: {fileID: 90464671}
+        m_TargetAssemblyTypeName: Aviator.BetPanel, Assembly-CSharp
+        m_MethodName: AutoMode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2456,6 +2456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 90464670}
   - component: {fileID: 90464669}
+  - component: {fileID: 90464671}
   - component: {fileID: 90464668}
   m_Layer: 5
   m_Name: BetPanel 1
@@ -2526,6 +2527,27 @@ RectTransform:
   m_AnchoredPosition: {x: -360, y: 0}
   m_SizeDelta: {x: 687, y: 262}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &90464671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90464666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c5e9715d4f9c49ed8a4f95df7190430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PanelIndex: 1
+  currentBetText: {fileID: 760710481}
+  playBtnCurrentBetText: {fileID: 217128565}
+  manualModeSelect: {fileID: 764854437}
+  autoModeSelect: {fileID: 1511205704}
+  autoPlayBtn: {fileID: 1858066731}
+  autoPlayPanel: {fileID: 1157921984}
+  betSelectorPosition: {fileID: 1232634494}
+  playBtnPosition: {fileID: 1189799691}
 --- !u!1 &92387783
 GameObject:
   m_ObjectHideFlags: 0
@@ -3776,7 +3798,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -3801,14 +3823,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RiverSweeps.Aviator.AviatorBetPanel, Assembly-CSharp
-        m_MethodName: OnClickBetSelectorsGetBet
-        m_Mode: 5
+      - m_Target: {fileID: 90464671}
+        m_TargetAssemblyTypeName: Aviator.BetPanel, Assembly-CSharp
+        m_MethodName: SelectBet
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 100
           m_FloatArgument: 0
           m_StringArgument: 100
           m_BoolArgument: 0
@@ -4077,7 +4099,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0.50
+  m_text: 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5318,7 +5340,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0.10 USD
+  m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10008,7 +10030,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1.00
+  m_text: 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12181,7 +12203,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0.10
+  m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12359,8 +12381,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Aviator.AviatorUIManager, Assembly-CSharp
+      - m_Target: {fileID: 976640751}
+        m_TargetAssemblyTypeName: Aviator.UIManager, Assembly-CSharp
+        m_MethodName: CloseMenuPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 976640751}
+        m_TargetAssemblyTypeName: Aviator.UIManager, Assembly-CSharp
         m_MethodName: CloseRulesPanel
         m_Mode: 1
         m_Arguments:
@@ -12609,7 +12643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &569051340
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14402,8 +14436,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RiverSweeps.Aviator.AviatorBetPanel, Assembly-CSharp
+      - m_Target: {fileID: 90464671}
+        m_TargetAssemblyTypeName: Aviator.BetPanel, Assembly-CSharp
         m_MethodName: IncreaseBet
         m_Mode: 1
         m_Arguments:
@@ -16389,8 +16423,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RiverSweeps.Aviator.AviatorBetPanel, Assembly-CSharp
+      - m_Target: {fileID: 90464671}
+        m_TargetAssemblyTypeName: Aviator.BetPanel, Assembly-CSharp
         m_MethodName: DecreaseBet
         m_Mode: 1
         m_Arguments:
@@ -16862,7 +16896,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0.10
+  m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -18446,7 +18480,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0.25
+  m_text: 25
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -22009,7 +22043,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2.00
+  m_text: 200
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -22661,8 +22695,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Aviator.AviatorUIManager, Assembly-CSharp
+      - m_Target: {fileID: 976640751}
+        m_TargetAssemblyTypeName: Aviator.UIManager, Assembly-CSharp
         m_MethodName: CloseRulesPanel
         m_Mode: 1
         m_Arguments:
@@ -23790,6 +23824,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115a34ed3e56a40cf9c4fa4edcea9b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  credits: {fileID: 1488670050}
+  totalWin: {fileID: 2093688098}
+  menuPanel: {fileID: 2029105756}
+  invisibleBtn: {fileID: 558065294}
+  rulesPanel: {fileID: 966706790}
 --- !u!1 &978196643
 GameObject:
   m_ObjectHideFlags: 0
@@ -26858,7 +26897,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2.00
+  m_text: 200
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -27520,8 +27559,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Aviator.AviatorUIManager, Assembly-CSharp
+      - m_Target: {fileID: 976640751}
+        m_TargetAssemblyTypeName: Aviator.UIManager, Assembly-CSharp
         m_MethodName: OpenMenuPanel
         m_Mode: 1
         m_Arguments:
@@ -34623,7 +34662,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0.50
+  m_text: 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -35114,7 +35153,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0.25
+  m_text: 25
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -35988,7 +36027,7 @@ RectTransform:
   m_Father: {fileID: 32379272}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -38346,7 +38385,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: --
+  m_text: Credits
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -44360,7 +44399,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -44385,14 +44424,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RiverSweeps.Aviator.AviatorBetPanel, Assembly-CSharp
-        m_MethodName: OnClickBetSelectorsGetBet
-        m_Mode: 5
+      - m_Target: {fileID: 90464671}
+        m_TargetAssemblyTypeName: Aviator.BetPanel, Assembly-CSharp
+        m_MethodName: SelectBet
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 50
           m_FloatArgument: 0
           m_StringArgument: 50
           m_BoolArgument: 0
@@ -45128,7 +45167,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1454970491}
   m_HandleRect: {fileID: 1454970490}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0.99999994
   m_Size: 0.36990976
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -46102,8 +46141,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RiverSweeps.Aviator.AviatorUIManager, Assembly-CSharp
+      - m_Target: {fileID: 976640751}
+        m_TargetAssemblyTypeName: Aviator.UIManager, Assembly-CSharp
         m_MethodName: OpenRulesPanel
         m_Mode: 1
         m_Arguments:
@@ -47135,7 +47174,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1.00
+  m_text: 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -48134,7 +48173,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -48159,14 +48198,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RiverSweeps.Aviator.AviatorBetPanel, Assembly-CSharp
-        m_MethodName: OnClickBetSelectorsGetBet
-        m_Mode: 5
+      - m_Target: {fileID: 90464671}
+        m_TargetAssemblyTypeName: Aviator.BetPanel, Assembly-CSharp
+        m_MethodName: SelectBet
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 25
           m_FloatArgument: 0
           m_StringArgument: 25
           m_BoolArgument: 0
@@ -53756,9 +53795,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RiverSweeps.Aviator.AviatorBetPanel, Assembly-CSharp
-        m_MethodName: ManualButton
+      - m_Target: {fileID: 90464671}
+        m_TargetAssemblyTypeName: Aviator.BetPanel, Assembly-CSharp
+        m_MethodName: ManualMode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
