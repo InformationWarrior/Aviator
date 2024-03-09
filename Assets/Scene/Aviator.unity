@@ -2054,9 +2054,9 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RiverSweeps.Aviator.AviatorBetPanel, Assembly-CSharp
-        m_MethodName: OnGetInput
+      - m_Target: {fileID: 90464671}
+        m_TargetAssemblyTypeName: Aviator.BetPanel, Assembly-CSharp
+        m_MethodName: CashOutInput
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2542,12 +2542,18 @@ MonoBehaviour:
   PanelIndex: 1
   currentBetText: {fileID: 760710481}
   playBtnCurrentBetText: {fileID: 217128565}
+  cashOutInputField: {fileID: 75214491}
   manualModeSelect: {fileID: 764854437}
   autoModeSelect: {fileID: 1511205704}
   autoPlayBtn: {fileID: 1858066731}
   autoPlayPanel: {fileID: 1157921984}
+  autoCashOutSliderOn: {fileID: 1946260049}
+  autoCashOutSliderOff: {fileID: 934594162}
   betSelectorPosition: {fileID: 1232634494}
   playBtnPosition: {fileID: 1189799691}
+  autoPlayImage: {fileID: 1858066734}
+  autoPlayEnabled: {fileID: 21300000, guid: 0e8677d1d41055741b4db595dde0132d, type: 3}
+  autoPlayDisabled: {fileID: 21300000, guid: 74a1052e84c3c814891182ed5357aee6, type: 3}
 --- !u!1 &92387783
 GameObject:
   m_ObjectHideFlags: 0
@@ -19164,9 +19170,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RiverSweeps.Aviator.AviatorBetPanel, Assembly-CSharp
-        m_MethodName: SetSlider
+      - m_Target: {fileID: 90464671}
+        m_TargetAssemblyTypeName: Aviator.BetPanel, Assembly-CSharp
+        m_MethodName: AutoCashOutSlider
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35748,7 +35754,7 @@ GameObject:
   - component: {fileID: 1424498185}
   - component: {fileID: 1424498186}
   m_Layer: 5
-  m_Name: BetInput
+  m_Name: CurrentBet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45167,7 +45173,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1454970491}
   m_HandleRect: {fileID: 1454970490}
   m_Direction: 2
-  m_Value: 0.99999994
+  m_Value: 1
   m_Size: 0.36990976
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -48975,9 +48981,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RiverSweeps.Aviator.AviatorBetPanel, Assembly-CSharp
-        m_MethodName: OnClickAutoPlay
+      - m_Target: {fileID: 90464671}
+        m_TargetAssemblyTypeName: Aviator.BetPanel, Assembly-CSharp
+        m_MethodName: ToggleAutoPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
