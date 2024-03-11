@@ -2,8 +2,6 @@ using UnityEngine;
 
 namespace Aviator
 {
-    public enum GameState { None, Waiting, Running, Finish};
-
     public class GameManager : MonoBehaviour
     {
         [SerializeField] private UIManager _uiManager;
