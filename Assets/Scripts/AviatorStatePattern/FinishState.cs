@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Aviator
@@ -11,6 +9,7 @@ namespace Aviator
 
         public override void EnterState(GameStateManager gameState)
         {
+            DrawLinesBackward();
             gameState.DisplayFlyAwayMultiplier(0.4f);
         }
 
@@ -28,6 +27,10 @@ namespace Aviator
             }
         }
 
+        private void DrawLinesBackward()
+        {
+            GameManager.Instance.LineAnimation.DrawLinesBackward();
+        }
         public void ResetState()
         {
             startValue = 0;

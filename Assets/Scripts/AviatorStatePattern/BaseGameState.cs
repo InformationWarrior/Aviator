@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Aviator
 {
     public abstract class BaseGameState

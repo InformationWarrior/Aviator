@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,10 +9,10 @@ namespace Aviator
     {
         private BaseGameState currentGameState = null;
 
-        public LoadingScreen LoadingScreen = new LoadingScreen();
-        public WaitingState WaitingState = new WaitingState();
-        public RunningState RunningState = new RunningState();
-        public FinishState FinishState = new FinishState();
+        public LoadingScreen LoadingScreen = new();
+        public WaitingState WaitingState = new();
+        public RunningState RunningState = new();
+        public FinishState FinishState = new();
 
         public Slider loadingSlider;
         [SerializeField] private GameObject loadingScreen;
@@ -25,10 +26,10 @@ namespace Aviator
         [SerializeField] private TextMeshProUGUI finishMultiplierText;
         [SerializeField] private GameObject flyAwayText;
         [SerializeField] private GameObject crashText;
-
+        
         private void Start()
         {
-            SwitchState(LoadingScreen);
+            SwitchState(WaitingState);
         }
 
         private void Update()
@@ -85,6 +86,11 @@ namespace Aviator
         {
             flyAwayText.SetActive(status);
             finishMultiplierText.gameObject.SetActive(status);
+        }
+
+        public void ToggleCrashFlyAwayText(bool status)
+        {
+            crashText.SetActive(status);
         }
     }
 }
