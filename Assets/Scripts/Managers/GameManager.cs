@@ -23,5 +23,10 @@ namespace Aviator
             else
                 Destroy(gameObject);
         }
+
+        private void Start()
+        {
+            AudioManager.PlayMusic();
+        }
     }
 }

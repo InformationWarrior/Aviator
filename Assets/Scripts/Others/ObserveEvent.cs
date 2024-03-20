@@ -1,4 +1,4 @@
-namespace Mother
+namespace ObserverPattern
 {
     public abstract class AbstractEvent
     {
@@ -11,11 +11,11 @@ namespace Mother
             DispatchCount++;
         }
     }
-    public class MotherEvent : AbstractEvent
+    public class ObserveEvent : AbstractEvent
     {
         private System.Action onTrigger;
 
-        public MotherEvent()
+        public ObserveEvent()
         {
         }
 
@@ -40,11 +40,11 @@ namespace Mother
         }
     }
 
-    public class MotherEvent<T> : AbstractEvent
+    public class ObserveEvent<T> : AbstractEvent
     {
         private System.Action<T> onTrigger;
 
-        public MotherEvent()
+        public ObserveEvent()
         {
         }
 
@@ -70,11 +70,11 @@ namespace Mother
         }
     }
 
-    public class MotherEvent<T, U> : AbstractEvent
+    public class ObserveEvent<T, U> : AbstractEvent
     {
         private System.Action<T, U> onTrigger;
 
-        public MotherEvent()
+        public ObserveEvent()
         {
         }
 
@@ -100,11 +100,11 @@ namespace Mother
         }
     }
 
-    public class MotherEvent<T, U, I> : AbstractEvent
+    public class ObserveEvent<T, U, I> : AbstractEvent
     {
         private System.Action<T, U, I> onTrigger;
 
-        public MotherEvent()
+        public ObserveEvent()
         {
         }
 
@@ -132,11 +132,11 @@ namespace Mother
         }
     }
 
-    public class MotherEvent<T, U, I, V> : AbstractEvent
+    public class ObserveEvent<T, U, I, V> : AbstractEvent
     {
         private System.Action<T, U, I, V> onTrigger;
 
-        public MotherEvent()
+        public ObserveEvent()
         {
         }
 
@@ -164,11 +164,11 @@ namespace Mother
         }
     }
 
-    public class MotherEvent<T, U, I, V, W> : AbstractEvent
+    public class ObserveEvent<T, U, I, V, W> : AbstractEvent
     {
         private System.Action<T, U, I, V, W> onTrigger;
 
-        public MotherEvent()
+        public ObserveEvent()
         {
         }
 

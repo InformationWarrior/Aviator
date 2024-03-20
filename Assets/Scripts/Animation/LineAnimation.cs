@@ -10,7 +10,7 @@ namespace Aviator
         [SerializeField] private Transform yEndPos;
         [SerializeField] private Color fillColor = Color.blue;
         [SerializeField] private LineRenderer[] lineRenderers;
-        private readonly float _lineWidth = 0.03f;
+        private readonly float lineWidth = 0.03f;
         private readonly float drawingSpeed = 0.5f;
 
         private void Start()
@@ -23,7 +23,7 @@ namespace Aviator
             foreach (var lineRenderer in lineRenderers)
             {
                 lineRenderer.positionCount = 2;
-                lineRenderer.startWidth = _lineWidth;
+                lineRenderer.startWidth = lineWidth;
                 lineRenderer.enabled = false;
             }
         }
@@ -44,6 +44,10 @@ namespace Aviator
             Vector3 targetXPosition = xEndPos.position;
             Vector3 targetYPosition = yEndPos.position;
 
+            Vector3 lerpedXPosition;
+            Vector3 lerpedYPosition;
+            float elapsedTime = 0f;
+
             lineRenderers[0].SetPosition(0, startPosition);
             lineRenderers[1].SetPosition(0, startPosition);
 
@@ -53,9 +57,7 @@ namespace Aviator
                 lineRenderer.startColor = fillColor;
                 lineRenderer.endColor = fillColor;
             }
-            Vector3 lerpedXPosition;
-            Vector3 lerpedYPosition;
-            float elapsedTime = 0f;
+
             while (elapsedTime < 1f)
             {
                 lerpedXPosition = Vector3.Lerp(startPosition, targetXPosition, elapsedTime);
@@ -72,13 +74,15 @@ namespace Aviator
             lineRenderers[1].SetPosition(1, targetYPosition);
         }
 
-        
-
         private IEnumerator Backward()
         {
             Vector3 startPosition = startPos.position;
             Vector3 targetXPosition = xEndPos.position;
             Vector3 targetYPosition = yEndPos.position;
+
+            Vector3 lerpedXPosition;
+            Vector3 lerpedYPosition;
+            float elapsedTime = 0f;
 
             lineRenderers[0].SetPosition(0, startPosition);
             lineRenderers[1].SetPosition(0, startPosition);
@@ -89,10 +93,7 @@ namespace Aviator
                 lineRenderer.startColor = fillColor;
                 lineRenderer.endColor = fillColor;
             }
-
-            Vector3 lerpedXPosition;
-            Vector3 lerpedYPosition;
-            float elapsedTime = 0f;
+            
             while (elapsedTime < 1f)
             {
                 lerpedXPosition = Vector3.Lerp(targetXPosition, startPosition, elapsedTime);

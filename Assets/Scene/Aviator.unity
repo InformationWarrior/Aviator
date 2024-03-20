@@ -45322,7 +45322,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1454970491}
   m_HandleRect: {fileID: 1454970490}
   m_Direction: 2
-  m_Value: 0.99999994
+  m_Value: 1
   m_Size: 0.36990976
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -51100,6 +51100,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd39604fd65394e148288ea60c149529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sounds:
+  - name: Cashout
+    clip: {fileID: 8300000, guid: 3396b82e6b1991944ab061096472a668, type: 3}
+  - name: FlyAway
+    clip: {fileID: 8300000, guid: cbd445858e3cbb0419904590dcf1a53a, type: 3}
+  bgSource: {fileID: 1252716072}
+  sfxSource: {fileID: 2021204446}
+  bgClips:
+  - {fileID: 8300000, guid: 41ede931d24ae63409a8389485858404, type: 3}
+  - {fileID: 8300000, guid: 70723fd13c6bfcd4ea159b8f32c09ac4, type: 3}
 --- !u!1 &1948123669
 GameObject:
   m_ObjectHideFlags: 0

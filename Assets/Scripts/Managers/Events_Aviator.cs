@@ -1,11 +1,11 @@
-using Mother;
+using ObserverPattern;
 
 namespace Aviator
 {
     public static class Events_Aviator
     {
-        public static MotherEvent<int, int> OnPressBetButton = new();
+        public static ObserveEvent<int, int> OnPressBetButton = new();
 
-        public static MotherEvent<BaseGameState> OnUpdateGameState = new();
+        public static ObserveEvent<BaseGameState> OnUpdateGameState = new();
     }
 }
