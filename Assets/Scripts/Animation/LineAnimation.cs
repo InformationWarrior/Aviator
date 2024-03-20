@@ -9,42 +9,104 @@ namespace Aviator
         [SerializeField] private Transform xEndPos;
         [SerializeField] private Transform yEndPos;
         [SerializeField] private Color fillColor = Color.blue;
-        [SerializeField] private LineRenderer xLine;
-        [SerializeField] private LineRenderer yLine;
+        [SerializeField] private LineRenderer[] lineRenderers;
+        private readonly float _lineWidth = 0.03f;
+        private readonly float drawingSpeed = 0.5f;
 
         private void Start()
         {
-            
+            Init();
+        }
+
+        private void Init()
+        {
+            foreach (var lineRenderer in lineRenderers)
+            {
+                lineRenderer.positionCount = 2;
+                lineRenderer.startWidth = _lineWidth;
+                lineRenderer.enabled = false;
+            }
         }
 
         public void DrawLinesForward()
         {
-            
-        }        
-        
+            StartCoroutine(Forward());
+        }
+
         public void DrawLinesBackward()
         {
-            
+            StartCoroutine(Backward());
         }
+
+        private IEnumerator Forward()
+        {
+            Vector3 startPosition = startPos.position;
+            Vector3 targetXPosition = xEndPos.position;
+            Vector3 targetYPosition = yEndPos.position;
+
+            lineRenderers[0].SetPosition(0, startPosition);
+            lineRenderers[1].SetPosition(0, startPosition);
+
+            foreach (var lineRenderer in lineRenderers)
+            {
+                lineRenderer.enabled = true;
+                lineRenderer.startColor = fillColor;
+                lineRenderer.endColor = fillColor;
+            }
+            Vector3 lerpedXPosition;
+            Vector3 lerpedYPosition;
+            float elapsedTime = 0f;
+            while (elapsedTime < 1f)
+            {
+                lerpedXPosition = Vector3.Lerp(startPosition, targetXPosition, elapsedTime);
+                lerpedYPosition = Vector3.Lerp(startPosition, targetYPosition, elapsedTime);
+
+                lineRenderers[0].SetPosition(1, lerpedXPosition);
+                lineRenderers[1].SetPosition(1, lerpedYPosition);
+
+                elapsedTime += Time.deltaTime * drawingSpeed;
+                yield return null;
+            }
+
+            lineRenderers[0].SetPosition(1, targetXPosition);
+            lineRenderers[1].SetPosition(1, targetYPosition);
+        }
+
         
-        private IEnumerator DrawForwardOnX()
-        {
-            yield return null;
-        }
 
-        private IEnumerator DrawForwardOnY()
+        private IEnumerator Backward()
         {
-            yield return null;
-        }
+            Vector3 startPosition = startPos.position;
+            Vector3 targetXPosition = xEndPos.position;
+            Vector3 targetYPosition = yEndPos.position;
 
-        private IEnumerator DrawBackwardOnX()
-        {
-            yield return null;
-        }
+            lineRenderers[0].SetPosition(0, startPosition);
+            lineRenderers[1].SetPosition(0, startPosition);
 
-        private IEnumerator DrawbackwardOnY()
-        {
-            yield return null;
+            foreach (var lineRenderer in lineRenderers)
+            {
+                lineRenderer.enabled = true;
+                lineRenderer.startColor = fillColor;
+                lineRenderer.endColor = fillColor;
+            }
+
+            Vector3 lerpedXPosition;
+            Vector3 lerpedYPosition;
+            float elapsedTime = 0f;
+            while (elapsedTime < 1f)
+            {
+                lerpedXPosition = Vector3.Lerp(targetXPosition, startPosition, elapsedTime);
+                lerpedYPosition = Vector3.Lerp(targetYPosition, startPosition, elapsedTime);
+
+                lineRenderers[0].SetPosition(1, lerpedXPosition);
+                lineRenderers[1].SetPosition(1, lerpedYPosition);
+
+                elapsedTime += Time.deltaTime * drawingSpeed;
+                yield return null;
+            }
+
+            lineRenderers[0].SetPosition(1, startPosition);
+            lineRenderers[1].SetPosition(1, startPosition);
         }
     }
 }
